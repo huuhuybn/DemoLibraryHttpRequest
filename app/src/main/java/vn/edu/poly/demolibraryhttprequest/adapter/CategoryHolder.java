@@ -21,5 +21,5 @@ class CategoryHolder extends RecyclerView.ViewHolder {
         tvTitle = itemView.findViewById(R.id.tvTitle);
 
     }
-    
+
 }

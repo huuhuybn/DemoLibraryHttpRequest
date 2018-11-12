@@ -35,6 +35,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryHolder> {
     @Override
     public void onBindViewHolder(@NonNull CategoryHolder categoryHolder, int i) {
 
+        HDWALLPAPER hdwallpaper = hdwallpapers.get(i);
+
+        categoryHolder.tvTitle.setText(hdwallpaper.getCategoryName());
+
+
+
+
     }
 
     @Override
