@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import vn.edu.poly.demolibraryhttprequest.adapter.CategoryAdapter;
 import vn.edu.poly.demolibraryhttprequest.model.CategoryResponse;
 
 public class MainActivity extends AppCompatActivity {
@@ -54,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
                         if (response.isSuccessful()) {
-                            Log.e("data",
-                                    response.body().getHDWALLPAPER().size() + "");
+
+                            CategoryAdapter categoryAdapter = new
+                                    CategoryAdapter(MainActivity.this,response.body().getHDWALLPAPER());
+                            lvList.setAdapter(categoryAdapter);
 
                         }
                     }

@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import vn.edu.poly.demolibraryhttprequest.R;
@@ -39,7 +41,14 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryHolder> {
 
         categoryHolder.tvTitle.setText(hdwallpaper.getCategoryName());
 
+        Glide.with(context).load(hdwallpaper.getCategoryImage()).into(categoryHolder.imgAvatar);
 
+        categoryHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
 
     }
